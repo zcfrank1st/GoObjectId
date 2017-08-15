@@ -15,3 +15,6 @@ GoObjectId
 > mock mangodb object id service
 
 ### MIT
+
+TODO 
+1. let the id become shorter **
