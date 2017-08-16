@@ -17,5 +17,5 @@ GoObjectId
 ### MIT
 
 TODO 
-1. let the id become shorter **
-2. define the first year
+1. let the id become shorter (time 4 byte, machine 1 byte, pid 2 byte, count 2 byte)
+2. define the first year -> 2000-01-01 00:00:00
