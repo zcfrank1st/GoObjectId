@@ -11,6 +11,6 @@ func GetObjectId(context *gin.Context) {
     context.JSON(200, gin.H{
         "objectId": fmt.Sprintf("%x", objBytes),
         "objectIdString": string(objBytes),
-        "objectIdBytes": objBytes,
+        "objectIdBytes": objBytes, // todo why ?
     })
 }

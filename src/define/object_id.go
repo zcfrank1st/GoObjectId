@@ -15,6 +15,9 @@ var (
 
     machineBytes []byte
     processBytes []byte
+
+    now int64
+    old int64 = 0
 )
 
 func init () {
@@ -24,6 +27,11 @@ func init () {
 
 func ObjectId () []byte {
     t := timestamp()
+    if now != old {
+        atomic.StoreInt64(&counter, 0)
+        old = now
+    }
+
     c := count()
 
     objectIdBytes := make([]byte, 12)
@@ -36,8 +44,9 @@ func ObjectId () []byte {
 }
 
 func timestamp () []byte {
+    now = time.Now().Unix()
     buf := new(bytes.Buffer)
-    err := binary.Write(buf, binary.LittleEndian, time.Now().Unix())
+    err := binary.Write(buf, binary.LittleEndian, now)
     if err != nil {
         fmt.Println("binary.Write failed:", err)
     }
