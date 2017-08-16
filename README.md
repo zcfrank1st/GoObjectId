@@ -18,3 +18,4 @@ GoObjectId
 
 TODO 
 1. let the id become shorter **
+2. define the first year
